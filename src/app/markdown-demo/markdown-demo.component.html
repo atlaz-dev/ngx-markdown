@@ -22,6 +22,7 @@
   <li><a href="#horizontal-rule">Horizontal Rule</a></li>
   <li><a href="#remote-url">Remote Url</a></li>
   <li><a href="#variable-binding">Variable Binding</a></li>
+  <li><a href="#pipe">Pipe Usage</a></li>
 </ul>
 
 <!-- HEADER -->
@@ -172,7 +173,6 @@
 </markdown-to-html>
 
 <textarea class="variable-textarea" [(ngModel)]="markdown"></textarea>
-
 <markdown-to-html class="variable-binding" [data]="markdown"></markdown-to-html>
 
 <br /><br />
@@ -182,3 +182,21 @@
 </markdown-to-html>
 
 <markdown-to-html [src]="'app/markdown-demo/remote/language-pipe.html'"></markdown-to-html>
+
+<!-- PIPE USAGE -->
+<h2 id="pipe" class="subtitle">Pipe Usage</h2>
+
+<markdown-to-html>
+  Using `markdownToHtml` pipe to transform markdown to HTML allow you to chain pipe transformation and will aslo update the DOM when value changes
+</markdown-to-html>
+
+<markdown-to-html [src]="'app/markdown-demo/remote/markdown-pipe.html'"></markdown-to-html>
+
+<br />
+
+<markdown-to-html>
+  In the example below, `pipeMarkdown` property does not contains any `back-ticks` to set the content language but will be chain with `language` pipe instead to specify synthax highlights language along with `markdownToHtml` pipe for conversion
+</markdown-to-html>
+
+<textarea class="pipe-textarea" [(ngModel)]="typescriptMarkdown"></textarea>
+<div class="pipe-usage" [innerHTML]="typescriptMarkdown | language : 'typescript' | markdownToHtml"></div>

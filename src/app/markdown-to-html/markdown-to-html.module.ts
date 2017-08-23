@@ -3,17 +3,22 @@ import { HttpModule } from '@angular/http';
 
 import { LanguagePipe } from './language.pipe';
 import { MarkdownToHtmlComponent } from './markdown-to-html.component';
+import { MarkdownToHtmlPipe } from './markdown-to-html.pipe';
 import { MarkdownToHtmlService } from './markdown-to-html.service';
 
 @NgModule({
-  exports: [
-    MarkdownToHtmlComponent,
-    LanguagePipe,
+  imports: [
+    HttpModule,
   ],
-  imports: [HttpModule],
   declarations: [
-    MarkdownToHtmlComponent,
     LanguagePipe,
+    MarkdownToHtmlComponent,
+    MarkdownToHtmlPipe,
+  ],
+  exports: [
+    LanguagePipe,
+    MarkdownToHtmlComponent,
+    MarkdownToHtmlPipe,
   ],
 })
 export class MarkdownToHtmlModule {
