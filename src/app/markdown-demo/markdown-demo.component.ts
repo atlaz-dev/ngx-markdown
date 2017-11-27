@@ -34,6 +34,6 @@ public markdown = "# Markdown";
 #### example.component.html
 \`\`\`html
 <textarea [(ngModel)]="markdown"></textarea>
-<markdown [data]="markdown"></markdown>
+<markdown [data]="markdown" [isTargetBlankLinks]="true"></markdown>
 \`\`\``;
 }

@@ -32,13 +32,27 @@ import 'prismjs/components/prism-typescript';
 export class MarkdownComponent implements AfterViewInit, OnChanges {
   @Input() data: string;
   @Input() src: string;
+  @Input() isTargetBlankLinks = false;
+  static addTargetBlank = (href: string, title: string, text: string) => {
+    let out;
+    out = '<a href=\"' + href + '\"';
+    out += ' target="_blank"';
+    if (title) {
+      out += ' title=\"' + title + '\"';
+    }
+    return out + '>' + text + '</a>';
+  };
 
-  constructor(
-    public element: ElementRef,
-    public markdownService: MarkdownService,
-  ) { }
+  constructor(public element: ElementRef,
+              public markdownService: MarkdownService,) {
+  }
 
   ngAfterViewInit() {
+    if (this.isTargetBlankLinks) {
+      const customRenderer = new marked.Renderer();
+      customRenderer.link = MarkdownComponent.addTargetBlank;
+      marked.setOptions({ renderer: customRenderer });
+    }
     if (this.data) {
       this.handleData();
       return;

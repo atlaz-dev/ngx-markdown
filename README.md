@@ -136,6 +136,9 @@ When using variable binding you can optionally use `language` pipe to specify th
 ```html
 <markdown [data]="markdown | language : 'typescript'"></markdown>
 ```
+## Generate links with `target="_blank"`
+
+Use input param `[isTargetBlankLinks]="true"`. It'll be checked only in `AfterVewInit` lifecycle hook, so it cant'be changed dynamically
 
 ## Demo application
 
