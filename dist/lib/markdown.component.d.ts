@@ -1,0 +1,31 @@
+import { AfterViewInit, ElementRef, OnChanges, SimpleChanges } from '@angular/core';
+import { MarkdownService } from './markdown.service';
+import 'prismjs/prism';
+import 'prismjs/components/prism-c';
+import 'prismjs/components/prism-cpp';
+import 'prismjs/components/prism-csharp';
+import 'prismjs/components/prism-css';
+import 'prismjs/components/prism-diff';
+import 'prismjs/components/prism-java';
+import 'prismjs/components/prism-javascript';
+import 'prismjs/components/prism-perl';
+import 'prismjs/components/prism-php';
+import 'prismjs/components/prism-python';
+import 'prismjs/components/prism-sass';
+import 'prismjs/components/prism-scss';
+import 'prismjs/components/prism-typescript';
+export declare class MarkdownComponent implements AfterViewInit, OnChanges {
+    element: ElementRef;
+    markdownService: MarkdownService;
+    data: string;
+    src: string;
+    isTargetBlankLinks: boolean;
+    static addTargetBlank: (href: string, title: string, text: string) => string;
+    constructor(element: ElementRef, markdownService: MarkdownService);
+    ngAfterViewInit(): void;
+    ngOnChanges(changes: SimpleChanges): void;
+    handleData(): void;
+    handleSrc(): void;
+    handleRaw(raw: string): void;
+    prepare(raw: string): string;
+}
