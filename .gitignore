@@ -1,16 +1,13 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # compiled output
-/inline-template
-/package
+/dist
+/documentation
 /tmp
-*.ngfactory.ts
-*.ngsummary.json
-*.tgz
-*.tar
+/out-tsc
 
 # dependencies
-/node_modules
+**/node_modules
 
 # IDEs and editors
 /.idea
@@ -31,17 +28,17 @@
 # misc
 /.sass-cache
 /connect.lock
-/coverage/*
-test-results.xml
+/coverage
 /libpeerconnection.log
-npm-debug.log
-testem.log
+/package
 /typings
+package-lock.json
+test-results.xml
+tslint.xml
+*.log
+*.tar
+*.tgz
 
-# e2e
-/e2e/*.js
-/e2e/*.map
-
-#System Files
+# System Files
 .DS_Store
 Thumbs.db
