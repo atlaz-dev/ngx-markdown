@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, ElementRef, EventEmitter, Input, Output } from '@angular/core';
-
+import { Renderer, setOptions } from 'marked';
 import { MarkdownService } from './markdown.service';
 
 @Component({
@@ -13,14 +13,20 @@ export class MarkdownComponent implements AfterViewInit {
   private _src: string;
 
   @Input()
-  get data(): string { return this._data; }
+  get data(): string {
+    return this._data;
+  }
+
   set data(value: string) {
     this._data = value;
     this.render(value);
   }
 
   @Input()
-  get src(): string { return this._src; }
+  get src(): string {
+    return this._src;
+  }
+
   set src(value: string) {
     this._src = value;
     this.markdownService
@@ -34,6 +40,8 @@ export class MarkdownComponent implements AfterViewInit {
       );
   }
 
+  @Input() isTargetBlankLinks = false;
+
   @Output() error = new EventEmitter<string>();
   @Output() load = new EventEmitter<string>();
 
@@ -41,12 +49,28 @@ export class MarkdownComponent implements AfterViewInit {
     return !this.data && !this.src;
   }
 
+  static addTargetBlank(href: string, title: string, text: string) {
+    let out;
+    out = '<a href="' + href + '"';
+    out += ' target="_blank"';
+    if (title) {
+      out += ' title="' + title + '"';
+    }
+    return out + '>' + text + '</a>';
+  }
+
   constructor(
     public element: ElementRef,
     public markdownService: MarkdownService,
-  ) { }
+  ) {
+  }
 
   ngAfterViewInit() {
+    if (this.isTargetBlankLinks) {
+      const customRenderer = new Renderer();
+      customRenderer.link = MarkdownComponent.addTargetBlank;
+      setOptions({ renderer: customRenderer });
+    }
     if (this.isTranscluded) {
       this.render(this.element.nativeElement.innerHTML);
     }
