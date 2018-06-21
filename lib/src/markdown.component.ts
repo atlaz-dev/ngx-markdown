@@ -69,7 +69,7 @@ export class MarkdownComponent implements AfterViewInit {
     if (this.isTargetBlankLinks) {
       const customRenderer = new Renderer();
       customRenderer.link = MarkdownComponent.addTargetBlank;
-      setOptions({ renderer: customRenderer });
+      this.markdownService.renderer = customRenderer;
     }
     if (this.isTranscluded) {
       this.render(this.element.nativeElement.innerHTML);
