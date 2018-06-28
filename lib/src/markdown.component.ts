@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, ElementRef, EventEmitter, Input, Output } from '@angular/core';
-import { Renderer, setOptions } from 'marked';
+import { Renderer } from 'marked';
 import { MarkdownService } from './markdown.service';
 
 @Component({
@@ -7,6 +7,7 @@ import { MarkdownService } from './markdown.service';
   selector: 'markdown, [markdown]',
   template: '<ng-content></ng-content>',
   styleUrls: ['./markdown.component.scss'],
+  preserveWhitespaces: true,
 })
 export class MarkdownComponent implements AfterViewInit {
   private _data: string;
