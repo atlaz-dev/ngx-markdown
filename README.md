@@ -1,3 +1,7 @@
+# ngx-markdown-hyggerio
+Added input parameter `isTargetBlankLinks: boolean`, default: `fasle`. If `true`, all links will be generated with `target=_blank` attribute.
+
+
 # ngx-markdown
 [![CircleCI](https://circleci.com/gh/jfcere/ngx-markdown/tree/master.svg?style=shield&)](https://circleci.com/gh/jfcere/ngx-markdown/tree/master) [![Coverage Status](https://coveralls.io/repos/github/jfcere/ngx-markdown/badge.svg?branch=master)](https://coveralls.io/github/jfcere/ngx-markdown?branch=master) [![version](https://img.shields.io/npm/v/ngx-markdown.svg?style=flat)](https://www.npmjs.com/package/ngx-markdown) [![npm](https://img.shields.io/npm/l/ngx-markdown.svg)](https://opensource.org/licenses/MIT) [![dependencies Status](https://david-dm.org/jfcere/ngx-markdown/status.svg?path=lib)](https://david-dm.org/jfcere/ngx-markdown?path=lib) [![peerDependencies Status](https://david-dm.org/jfcere/ngx-markdown/peer-status.svg?path=lib)](https://david-dm.org/jfcere/ngx-markdown?path=lib&type=peer) [![monthly Downloads](https://img.shields.io/npm/dm/ngx-markdown.svg)](https://www.npmjs.com/package/ngx-markdown)
 

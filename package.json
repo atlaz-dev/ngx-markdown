@@ -1,26 +1,19 @@
 {
-  "name": "ngx-markdown",
+  "name": "ngx-markdown-hyggerio",
   "version": "6.0.1",
-  "description": "Angular library that uses marked to parse markdown to html combined with Prism.js for synthax highlights",
-  "homepage": "https://github.com/jfcere/ngx-markdown",
+  "description": "Fork of ngx-markdown (https://github.com/jfcere/ngx-markdown): Angular library that uses marked to parse markdown to html combined with Prism.js for synthax highlights",
+  "homepage": "https://github.com/hygger-dev/ngx-markdown",
   "license": "MIT",
   "author": {
-    "name": "Jean-Francois Cere",
-    "email": "jfcere@sherweb.com"
+    "name": "Dmitry Sinkov",
+    "email": "dsinkov@hygger.io"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jfcere/ngx-markdown"
+    "url": "https://bitbucket.org/hygger/ngx-markdown"
   },
   "keywords": [
-    "angular",
-    "ngx",
-    "markdown",
-    "parser",
-    "marked",
-    "marked.js",
-    "prism",
-    "prism.js"
+    "hygger.io"
   ],
   "scripts": {
     "ng": "ng",
